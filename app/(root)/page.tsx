@@ -1,7 +1,10 @@
-import Image from 'next/image'
+import { UserButton } from "@clerk/nextjs";
 
-export default function Home() {
+
+export default function SetupPage() {
   return (
-    <p>Hello Admin Dash</p>
+    <div>
+       <UserButton afterSignOutUrl="/"/>
+    </div>
   )
 }
