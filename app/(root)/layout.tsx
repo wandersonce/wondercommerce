@@ -18,4 +18,10 @@ export default async function SetupLayout( {children} : {children: React.ReactNo
   if(store){
     redirect(`/${store.id}`);
   }
+
+  return(
+    <>
+      {children}
+    </>
+  )
 }
