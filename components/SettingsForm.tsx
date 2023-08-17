@@ -16,6 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "./ui/input";
 import { toast } from "react-hot-toast";
 import AlertModal from "./modals/AlertModal";
+import ApiAlert from "./ui/ApiAlert";
 
 interface SettingFormProps{
   initialData: Store;
@@ -123,6 +124,8 @@ export default function SettingsForm({initialData} : SettingFormProps) {
           </Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert title="NEXT_PUBLIC_API_URL" description={`${origin}/api/${params.storeId}`} variant="public"/>
     </>
   )
 }
