@@ -15,6 +15,7 @@ import { Separator } from "./ui/separator";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
 import { toast } from "react-hot-toast";
+import AlertModal from "./modals/AlertModal";
 
 interface SettingFormProps{
   initialData: Store;
@@ -53,10 +54,37 @@ export default function SettingsForm({initialData} : SettingFormProps) {
     } finally{
       setLoading(false);
     }
+  };
+
+
+  const onDelete = async () => {
+    try {
+      setLoading(true);
+
+      await axios.delete(`/api/stores/${params.storeId}`);
+
+      router.refresh();
+
+      router.push("/");
+
+      toast.success("Store Deleted");
+      
+    } catch (error) {
+      toast.error("Make sure you removed all products and categories first.")
+    } finally{
+      setLoading(false);
+      setOpen(false);
+    }
   }
 
   return (
     <>
+      <AlertModal 
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        onConfirm={onDelete}
+        loading={loading}
+      />
       <div className="flex items-center justify-center">
         <Heading
           title="Settings"
