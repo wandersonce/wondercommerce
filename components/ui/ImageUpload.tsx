@@ -57,6 +57,7 @@ export default function ImageUpload({disabled, onChange, onRemove, value} : Imag
             return(
               <Button type="button" disabled={disabled} variant="secondary" onClick={onClick}>
                 <ImagePlus className="w-4 h-4 mr-2" /> 
+                Upload a Image
               </Button>
             )
 
