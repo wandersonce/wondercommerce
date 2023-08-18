@@ -17,6 +17,7 @@ import { Input } from "./ui/input";
 import { toast } from "react-hot-toast";
 import AlertModal from "./modals/AlertModal";
 import ApiAlert from "./ui/ApiAlert";
+import { useOrigin } from "@/hooks/use-origin";
 
 interface SettingFormProps{
   initialData: Store;
@@ -31,6 +32,7 @@ type SettingsFormValues = z.infer<typeof formSchema>;
 export default function SettingsForm({initialData} : SettingFormProps) {
   const params = useParams();
   const router = useRouter();
+  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);

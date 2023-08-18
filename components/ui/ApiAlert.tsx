@@ -1,3 +1,5 @@
+"use client"
+
 import { Copy, Server } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "./alert";
 import { Badge, BadgeProps } from "./badge";
@@ -15,13 +17,14 @@ const textMap: Record<ApiAlertProps["variant"], string> = {
   admin: "Admin"
 }
 
+
 const variantMap: Record<ApiAlertProps["variant"], BadgeProps["variant"]> = {
   public: "secondary",
   admin: "destructive"
 }
 
 export default function ApiAlert({title,description,variant = "public"} : ApiAlertProps) {
-  
+
   const onCopy = () => {
     navigator.clipboard.writeText(description);
     toast.success("API Route Copied to the Clipboard")
