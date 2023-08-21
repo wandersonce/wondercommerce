@@ -8,22 +8,15 @@ import axios from "axios";
 import { useParams,useRouter } from "next/navigation";
 
 import { Billboard, Store } from "@prisma/client"
-
-
 import { Trash } from "lucide-react";
-
-
-
 import { toast } from "react-hot-toast";
 
-import { useOrigin } from "@/hooks/use-origin";
 import AlertModal from "@/components/modals/AlertModal";
 import Heading from "@/components/ui/Heading";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import ApiAlert from "@/components/ui/ApiAlert";
 import ImageUpload from "@/components/ui/ImageUpload";
 
 interface BillboardFormProps{
@@ -40,7 +33,6 @@ type SettingsFormValues = z.infer<typeof formSchema>;
 export default function BillboardForm({initialData} : BillboardFormProps) {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
