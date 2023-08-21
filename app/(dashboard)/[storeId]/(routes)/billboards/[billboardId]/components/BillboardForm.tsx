@@ -76,7 +76,7 @@ export default function BillboardForm({initialData} : BillboardFormProps) {
 
       router.refresh();
 
-      router.push("/");
+      router.push(`/${params.storeId}/billboards`);
 
       toast.success("Billboard Deleted");
       
@@ -155,7 +155,6 @@ export default function BillboardForm({initialData} : BillboardFormProps) {
           </Button>
         </form>
       </Form>
-      <Separator />
     </>
   )
 }
