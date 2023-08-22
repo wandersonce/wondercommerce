@@ -120,7 +120,7 @@ export default function SizeForm({initialData} : SizeFormProps) {
           <div className="grid grid-cols-3 gap-8">
             <FormField 
              control={form.control}
-             name="value"
+             name="name"
              render={({field}) => (
               <FormItem>
                 <FormLabel>Name</FormLabel>
