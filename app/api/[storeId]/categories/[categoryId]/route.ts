@@ -2,7 +2,7 @@ import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs"
 import { NextResponse } from "next/server"
 
-// GET INDIVIDUAL BILLBOARD
+// GET INDIVIDUAL CATEGORY
 export async function GET(req:Request, {params} : {params : { categoryId: string}}){
 
   try {
@@ -27,7 +27,7 @@ export async function GET(req:Request, {params} : {params : { categoryId: string
 }
 
 
-//UPDATE STORE ROUTE
+//UPDATE CATEGORY ROUTE
 export async function PATCH(req:Request, {params} : {params : {storeId: string , categoryId : string}}){
 
   try {
@@ -84,7 +84,7 @@ export async function PATCH(req:Request, {params} : {params : {storeId: string ,
 
 }
 
-//DELETE STORE
+//DELETE CATEGORY
 //Even req is not being used the params only is returned in the second parameter of the function
 export async function DELETE(req:Request, {params} : {params : {storeId : string, categoryId: string}}){
 
