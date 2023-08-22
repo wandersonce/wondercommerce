@@ -82,7 +82,7 @@ export default function CategoryForm({initialData, billboards} : CategoryFormPro
       toast.success("Category Deleted");
       
     } catch (error) {
-      toast.error("Make sure you removed categories using this billboard first.")
+      toast.error("Make sure you removed all products from this category first.")
     } finally{
       setLoading(false);
       setOpen(false);
