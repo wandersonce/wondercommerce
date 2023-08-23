@@ -24,7 +24,7 @@ export default function CellAction({data}:CellActionProps) {
 
   const onCopy = (id:string) => {
     navigator.clipboard.writeText(id);
-    toast.success("Products IDs Copied to the Clipboard")
+    toast.success("Product ID Copied to the Clipboard")
   }
 
   const onDelete = async () => {
@@ -38,7 +38,7 @@ export default function CellAction({data}:CellActionProps) {
       toast.success("Product Deleted");
       
     } catch (error) {
-      toast.error("Make sure you removed categories using this product first.")
+      toast.error("Something went wrong.")
     } finally{
       setLoading(false);
       setOpen(false);
