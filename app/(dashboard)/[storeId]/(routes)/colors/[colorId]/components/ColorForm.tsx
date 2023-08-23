@@ -74,7 +74,7 @@ export default function ColorForm({initialData} : ColorFormProps) {
     try {
       setLoading(true);
 
-      await axios.delete(`/api/${params.storeId}/colors/${params.sizeId}`);
+      await axios.delete(`/api/${params.storeId}/colors/${params.colorId}`);
 
       router.refresh();
 
